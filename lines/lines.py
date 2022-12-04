@@ -13,9 +13,10 @@ def main():
         sys.exit('File does not exist')
 
     for line in lines:
-        if check_line(line) == False:
-            n +=1
+        if check_line(line) is False:
+            n += 1
     print(n)
+
 
 def check_line(line):
     if line.isspace():
@@ -23,6 +24,7 @@ def check_line(line):
     if line.lstrip().startswith('#'):
         return True
     return False
+
 
 def check_arg():
     if len(sys.argv) > 2:
@@ -33,11 +35,5 @@ def check_arg():
         sys.exit('Not a Python file')
 
 
-
 if __name__ == "__main__":
     main()
-
-
-
-
-

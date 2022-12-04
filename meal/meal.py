@@ -1,5 +1,6 @@
 time = input('What time is it? ')
 
+
 def main():
     if 7.0 <= convert(time) <= 8.0:
         print('breakfast time')
@@ -8,10 +9,12 @@ def main():
     if 18.0 < convert(time) < 19.0:
         print('dinner time')
 
+
 def convert(time):
    time = time.replace(':', '.')
    time = float(time[:-1])
    return time
+
 
 if __name__ == "__main__":
     main()

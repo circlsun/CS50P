@@ -1,5 +1,5 @@
-res  =  50
-coins  =  [5, 10, 25, 50]
+res = 50
+coins = [5, 10, 25, 50]
 n = 0
 
 while True:
@@ -7,8 +7,8 @@ while True:
     n = int(input('Insert Coin: '))
 
     if n in coins:
-        res -=n
+        res -= n
 
-        if res <=  0:
+        if res <= 0:
             print('Change owed: ', abs(res))
             break
