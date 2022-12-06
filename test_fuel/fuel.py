@@ -17,7 +17,7 @@ def convert(fraction):
             else:
                 fraction = input('Fraction: ')
                 pass
-        except (ValueError,ZeroDivisionError):
+        except (ValueError, ZeroDivisionError):
             raise
 
 

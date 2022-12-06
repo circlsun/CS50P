@@ -1,12 +1,15 @@
 import re
 
+
 def main():
     print(convert(input("Hours: ")))
+
 
 def convert(s):
     h1, h2, m1, m2 = None, None, None, None
 
-    if matches := re.fullmatch(r'^(([0-9][0-2]*):*([0-5][0-9])*) ([A-P]M) to (([0-9][0-2]*):*([0-5][0-9])*) ([A-P]M)$', s):
+    if matches := re.fullmatch(r'^(([0-9][0-2]*):*([0-5][0-9])*) ([A-P]M) \
+                to (([0-9][0-2]*):*([0-5][0-9])*) ([A-P]M)$', s):
 
         format1 = matches.group(4)
         format2 = matches.group(8)
@@ -32,10 +35,10 @@ def convert(s):
                     return f'{00:02d}:{int(m1):02} to {h2:02d}:{int(m2):02}'
 
         elif format1 == 'PM':
-            if (h2 != 12) and  (m1 is None or m2 is None):
+            if (h2 != 12) and (m1 is None or m2 is None):
                 h1 = h1 + 12
                 return f'{h1:02d}:00 to {h2:02d}:00'
-            elif (h2 == 12) and  (m1 is None or m2 is None):
+            elif (h2 == 12) and (m1 is None or m2 is None):
                 return f'{h1:02d}:00 to {00:02d}:00'
             else:
                 if format2 == 'AM' and h2 != 12:
@@ -46,7 +49,6 @@ def convert(s):
 
     else:
         raise ValueError
-
 
 
 if __name__ == "__main__":

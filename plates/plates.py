@@ -5,6 +5,7 @@ def main():
     else:
         print("Invalid")
 
+
 def is_valid(s):
     if not s[0:2].isdigit() and (2 <= len(s) <= 6) and s.isalnum():
         for i in range(len(s)):
@@ -18,6 +19,7 @@ def is_valid(s):
             elif s.isalpha():
                 return True
     return False
+
 
 if __name__ == "__main__":
     main()

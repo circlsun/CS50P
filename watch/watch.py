@@ -1,5 +1,6 @@
 import re
 
+
 def main():
     print(parse(input("HTML: ")))
 
@@ -18,7 +19,6 @@ def parse(s):
             w3 = matches.group(7)
             res = w1 + f"{w2[:-2]}.be" + f'/{w3}'
             return res
-
 
 
 if __name__ == "__main__":

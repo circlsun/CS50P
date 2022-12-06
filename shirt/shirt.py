@@ -1,7 +1,7 @@
 import sys
 from PIL import Image, ImageOps
-import glob, os
 from os.path import splitext
+
 
 def main():
     check_arg()
@@ -9,7 +9,7 @@ def main():
         size = (600, 600)
 
         shirt = Image.open('shirt.png')
-        before = Image.open(sys.argv[1]) #sourse
+        before = Image.open(sys.argv[1])
 
         new_picture = ImageOps.fit(before, size)
         new_picture.paste(shirt, shirt)
@@ -17,6 +17,7 @@ def main():
 
     except FileNotFoundError:
         sys.exit(f'Could not read {sys.argv[1]}')
+
 
 def check_arg():
     if len(sys.argv) > 3:
@@ -26,13 +27,13 @@ def check_arg():
 
     file1 = splitext(sys.argv[1])
     file2 = splitext(sys.argv[2])
-
-    if check_ex(file1[1]) == False:
+    if check_ex(file1[1]) is False:
         sys.exit('Invalid output')
-    if check_ex(file2[1]) == False:
+    if check_ex(file2[1]) is False:
         sys.exit('Invalid output')
     if file1[1].lower() != file2[1].lower():
         sys.exit('Input and output have different extensions')
+
 
 def check_ex(file):
     if file in ['.jpg', 'jepg', '.png']:

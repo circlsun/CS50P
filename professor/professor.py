@@ -1,5 +1,6 @@
 from random import randint
 
+
 def main():
     score, err = 0, 0
     level = get_level()
@@ -12,19 +13,19 @@ def main():
 
         try:
             if int(input()) == res:
-                score +=1
+                score += 1
             else:
-                err +=1
+                err += 1
                 print('EEE')
                 print(sum, end='')
                 if int(input()) != res:
-                    err +=1
+                    err += 1
                     print('EEE')
                     print(sum, end='')
                 else:
                     continue
                 if int(input()) != res:
-                    err +=1
+                    err += 1
                     print('EEE')
                 else:
                     continue
@@ -49,6 +50,7 @@ def get_level():
         except (ValueError, IndexError, NameError):
             continue
 
+
 def generate_integer(level):
     if level == 1:
         return randint(0, 9)
@@ -60,5 +62,3 @@ def generate_integer(level):
 
 if __name__ == "__main__":
     main()
-
-

@@ -9,9 +9,7 @@ dict = {
     "Taco": 3.00,
     "Tortilla Salad": 8.00
 }
-
 sum = 0
-
 while True:
     try:
         item = input('Item: ').lower().title()
